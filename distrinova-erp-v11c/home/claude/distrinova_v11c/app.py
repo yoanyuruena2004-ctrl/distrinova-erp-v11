@@ -320,7 +320,7 @@ def call_nova(messages_hist, user_msg):
         return "**NOVA no configurada.** Agrega en `.streamlit/secrets.toml`:\n`GEMINI_API_KEY = \"AIza...\"` (gratis en aistudio.google.com)"
     system_ctx = build_context()
     if gemini_key:
-        MODELS = ["gemini-2.5-flash-preview-04-17","gemini-1.5-flash-latest","gemini-1.5-flash","gemini-1.0-pro"]
+        MODELS = ["gemini-2.5-flash","gemini-1.5-flash-latest","gemini-1.5-flash","gemini-1.0-pro"]
         contents = [{"role":"user" if m["rol"]=="user" else "model","parts":[{"text":m["mensaje"]}]} for m in messages_hist[-12:]]
         contents.append({"role":"user","parts":[{"text":user_msg}]})
         last_err = ""
