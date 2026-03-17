@@ -1,0 +1,42 @@
+════════════════════════════════════════════════════════
+  DistriNova ERP v11 — Solución error "Invalid URL"
+════════════════════════════════════════════════════════
+
+EL PROBLEMA
+  El archivo secrets.toml no está configurado o tiene
+  los valores de plantilla. Supabase no puede conectarse.
+
+PASOS PARA ARREGLAR
+  1. Abre el archivo: .streamlit/secrets.toml
+  
+  2. Reemplaza los tres valores con tus datos REALES:
+  
+     SUPABASE_URL  → ve a supabase.com → tu proyecto
+                     → Settings → API → Project URL
+                     Ejemplo: https://abcdef123.supabase.co
+     
+     SUPABASE_KEY  → mismo lugar → anon public key
+                     Es el token largo que empieza con eyJ...
+     
+     GEMINI_API_KEY → aistudio.google.com → Get API Key
+  
+  3. Guarda el archivo secrets.toml
+  
+  4. Reinicia Streamlit:
+     - Detén el servidor: Ctrl+C en la terminal
+     - Vuelve a iniciarlo: streamlit run app.py
+  
+  5. Si el error persiste, verifica:
+     - La URL debe empezar con https:// y terminar en .supabase.co
+     - La KEY no debe tener espacios al inicio ni al final
+     - El archivo secrets.toml debe estar en la carpeta .streamlit/
+       que está DENTRO de la carpeta del proyecto
+
+ESTRUCTURA CORRECTA DE CARPETAS
+  distrinova_v11/
+  ├── app.py
+  ├── database.py
+  ├── requirements.txt
+  └── .streamlit/
+      └── secrets.toml   ← aquí van tus claves reales
+

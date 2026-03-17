@@ -1,0 +1,15 @@
+# Claves secretas - NUNCA subir
+.env
+
+# Entorno virtual de Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
